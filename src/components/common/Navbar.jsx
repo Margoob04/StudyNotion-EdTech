@@ -17,20 +17,20 @@ const Navbar = () => {
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
 
-    const [subLinks, setSubLinks] = useState([]);
+    // const [subLinks, setSubLinks] = useState([]);
 
-    const fetchSubLinks = async () => {
-        try {
-            const result = await apiconnecter("GET", categories.CATEGORIES_API)
-            console.log("All Sublinks here : " + result);
-            setSubLinks(result.data.data)
-        } catch (error) {
-            console.log("Could not fetch the Category list");
-        }
-    }
+    // const fetchSubLinks = async () => {
+    //     try {
+    //         const result = await apiconnecter("GET", categories.CATEGORIES_API)
+    //         console.log("All Sublinks here : " + result);
+    //         setSubLinks(result.data.data)
+    //     } catch (error) {
+    //         console.log("Could not fetch the Category list");
+    //     }
+    // }
 
     useEffect(() => {
-        fetchSubLinks();
+        // fetchSubLinks();
     }, [])
 
     const location = useLocation();
@@ -65,7 +65,7 @@ const Navbar = () => {
                                                         <div className='absolute left-[50%] top-0 translate-y-[-45%] translate-x-[88%] h-6 w-6 rotate-45 rounded bg-richblack-5'>
                                                         </div>
 
-                                                        {
+                                                        {/* {
                                                             subLinks.length ? (
                                                                 subLinks.map((subLink, index) => (
                                                                     <Link key={index} to={`${subLink.link}`}>
@@ -73,7 +73,7 @@ const Navbar = () => {
                                                                     </Link>
                                                                 ))
                                                             ) : (<div></div>)
-                                                        }
+                                                        } */}
 
                                                     </div>
 
