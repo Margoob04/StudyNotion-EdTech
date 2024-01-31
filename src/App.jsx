@@ -18,6 +18,7 @@ import { ACCOUNT_TYPE } from "./utils/constants";
 import Settings from "./components/core/Dashboard/Settings"
 import Error from "./pages/Error"
 import EnrolledCourses from './components/core/Dashboard/EnrolledCourses'
+import Cart from './components/core/Dashboard/Cart'
 
 const App = () => {
 
@@ -81,9 +82,10 @@ const App = () => {
           <Route path="dashboard/my-profile" element={<MyProfile />} />
 
           <Route path="dashboard/Settings" element={<Settings />} />
-             
+          {/*  */}
           <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
-
+          <Route path="dashboard/cart" element={<Cart />} />
+          {/*  */}
 
           {/* {
             user?.accountType === ACCOUNT_TYPE.STUDENT && (
