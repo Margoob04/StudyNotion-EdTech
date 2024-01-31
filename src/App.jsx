@@ -15,7 +15,9 @@ import Dashboard from "../src/pages/Dashboard"
 import PrivateRoute from './components/core/Auth/PrivateRoute'
 import { useSelector } from 'react-redux'
 import { ACCOUNT_TYPE } from "./utils/constants";
+import Settings from "./components/core/Dashboard/Settings"
 import Error from "./pages/Error"
+import EnrolledCourses from './components/core/Dashboard/EnrolledCourses'
 
 const App = () => {
 
@@ -78,7 +80,9 @@ const App = () => {
         <Route element={<PrivateRoute><Dashboard /></PrivateRoute>}>
           <Route path="dashboard/my-profile" element={<MyProfile />} />
 
-          {/* <Route path="dashboard/Settings" element={<Settings />} /> */}
+          <Route path="dashboard/Settings" element={<Settings />} />
+             
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
 
 
           {/* {

@@ -11,6 +11,7 @@
     "dev": "concurrently -n \"client,start-backend\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run start-backend\""
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.2.0",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.5",
     "concurrently": "^8.2.2",
