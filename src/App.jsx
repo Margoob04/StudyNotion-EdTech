@@ -19,6 +19,7 @@ import Settings from "./components/core/Dashboard/Settings"
 import Error from "./pages/Error"
 import EnrolledCourses from './components/core/Dashboard/EnrolledCourses'
 import Cart from './components/core/Dashboard/Cart'
+import AddCourse from './components/core/Dashboard/AddCourse'
 
 const App = () => {
 
@@ -82,12 +83,8 @@ const App = () => {
           <Route path="dashboard/my-profile" element={<MyProfile />} />
 
           <Route path="dashboard/Settings" element={<Settings />} />
-          {/*  */}
-          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
-          <Route path="dashboard/cart" element={<Cart />} />
-          {/*  */}
 
-          {/* {
+          {
             user?.accountType === ACCOUNT_TYPE.STUDENT && (
               <>
                 <Route path="dashboard/cart" element={<Cart />} />
@@ -99,14 +96,14 @@ const App = () => {
           {
             user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
               <>
-                <Route path="dashboard/instructor" element={<Instructor />} />
+                {/* <Route path="dashboard/instructor" element={<Instructor />} /> */}
                 <Route path="dashboard/add-course" element={<AddCourse />} />
-                <Route path="dashboard/my-courses" element={<MyCourses />} />
-                <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+                {/* <Route path="dashboard/my-courses" element={<MyCourses />} /> */}
+                {/* <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} /> */}
 
               </>
             )
-          } */}
+          }
 
 
         </Route>
