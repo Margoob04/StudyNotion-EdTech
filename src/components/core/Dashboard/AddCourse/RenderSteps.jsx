@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 import CourseBuilderForm from "./CourseBuilder/CourseBuilderForm"
 import CourseInformationForm from "./CourseInformation/CourseInformationForm"
-// import PublishCourse from "./PublishCourse"
+import PublishCourse from "./PublishCourse"
 
 
 export default function RenderSteps() {
@@ -63,28 +63,27 @@ export default function RenderSteps() {
 
       <div className="relative mb-16 flex w-full select-none justify-between">
         {steps.map((item) => (
-          <>
-            <div
+            <>
+              <div
               className="flex min-w-[130px] flex-col items-center gap-y-2"
               key={item.id}
-            >
-              
+              >
+            
               <p
                 className={`text-sm ${
-                  step >= item.id ? "text-richblack-5" : "text-richblack-500"
+                step >= item.id ? "text-richblack-5" : "text-richblack-500"
                 }`}
               >
-                {item.title}
+              {item.title}
               </p>
-            </div>
-            
-          </>
+              </div> 
+            </>         
         ))}
       </div>
       {/* Render specific component based on current step */}
       {step === 1 && <CourseInformationForm />}
       {step === 2 && <CourseBuilderForm />}
-      {/* {step === 3 &&  <PublishCourse /> } */}
+      {step === 3 &&  <PublishCourse /> }
     </>
   )
 }
