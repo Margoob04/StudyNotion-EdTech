@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Table, Tbody, Td, Th, Thead, Tr } from "react-super-responsive-table"
+// import { Table, Tbody, Td, Th, Thead, Tr } from "react-super-responsive-table"
 
 import { setCourse, setEditCourse } from "../../../../slices/courseSlice"
-import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
+
+// import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
+
 import { useState } from "react"
 import { FaCheck } from "react-icons/fa"
 import { FiEdit2 } from "react-icons/fi"
@@ -41,38 +43,38 @@ export default function CoursesTable({ courses, setCourses }) {
 
   return (
     <>
-      <Table className="rounded-xl border border-richblack-800 ">
-        <Thead>
-          <Tr className="flex gap-x-10 rounded-t-md border-b border-b-richblack-800 px-6 py-2">
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+      <table className="rounded-xl border border-richblack-800 ">
+        <thead>
+          <tr className="flex gap-x-10 rounded-t-md border-b border-b-richblack-800 px-6 py-2">
+            <th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Courses
-            </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            </th>
+            <th className="text-left text-sm font-medium uppercase text-richblack-100">
               Duration
-            </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            </th>
+            <th className="text-left text-sm font-medium uppercase text-richblack-100">
               Price
-            </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            </th>
+            <th className="text-left text-sm font-medium uppercase text-richblack-100">
               Actions
-            </Th>
-          </Tr>
-        </Thead>
-        <Tbody>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
           {courses?.length === 0 ? (
-            <Tr>
-              <Td className="py-10 text-center text-2xl font-medium text-richblack-100">
+            <tr>
+              <td className="py-10 text-center text-2xl font-medium text-richblack-100">
                 No courses found
                 {/* TODO: Need to change this state */}
-              </Td>
-            </Tr>
+              </td>
+            </tr>
           ) : (
             courses?.map((course) => (
-              <Tr
+              <tr
                 key={course._id}
                 className="flex gap-x-10 border-b border-richblack-800 px-6 py-8"
               >
-                <Td className="flex flex-1 gap-x-4">
+                <td className="flex flex-1 gap-x-4">
                   <img
                     src={course?.thumbnail}
                     alt={course?.courseName}
@@ -108,14 +110,14 @@ export default function CoursesTable({ courses, setCourses }) {
                       </p>
                     )}
                   </div>
-                </Td>
-                <Td className="text-sm font-medium text-richblack-100">
+                </td>
+                <td className="text-sm font-medium text-richblack-100">
                   2hr 30min
-                </Td>
-                <Td className="text-sm font-medium text-richblack-100">
+                </td>
+                <td className="text-sm font-medium text-richblack-100">
                   ₹{course.price}
-                </Td>
-                <Td className="text-sm font-medium text-richblack-100 ">
+                </td>
+                <td className="text-sm font-medium text-richblack-100 ">
                   <button
                     disabled={loading}
                     onClick={() => {
@@ -148,12 +150,12 @@ export default function CoursesTable({ courses, setCourses }) {
                   >
                     <RiDeleteBin6Line size={20} />
                   </button>
-                </Td>
-              </Tr>
+                </td>
+              </tr>
             ))
           )}
-        </Tbody>
-      </Table>
+        </tbody>
+      </table>
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   )
