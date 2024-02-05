@@ -1,5 +1,5 @@
-const Category = require("../models/categoryModel");
 const { mongoose } = require("mongoose");
+const Category = require("../models/categoryModel");
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
@@ -81,11 +81,11 @@ exports.categoryPageDetails = async (req, res) => {
         }
 
         //get courses for different categories
-        const differentCategories = await Category.find({
+        const differentCategories = await Category.findOne({
             _id: { $ne: categoryId },
         })
             .populate("course")
-            .exec();  //🛑
+            .exec();  
         // get top selling 
         const allCategories = await Category.find().populate({
             path: "course",
@@ -99,7 +99,7 @@ exports.categoryPageDetails = async (req, res) => {
         const mostSellingCourse = allCourses.sort((a, b) => b.sold - a.sold).slice(0, 10)
         //TODO : HW write it on your own 
         // return response
-        return res.status(200), json({
+        return res.status(200).json({
             success: true,
             data: {
                 selectedCategory,
