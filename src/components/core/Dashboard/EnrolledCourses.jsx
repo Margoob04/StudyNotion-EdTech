@@ -44,9 +44,9 @@ const EnrolledCourses = () => {
                      </div>
                      {/* Cards shure hote h aab */}
                      {
-                        enrolledCourses.map((course,index)=>(
+                        enrolledCourses.map((course,index,arr)=>(
                             <div key={index} className={`flex items-center border border-richblack-700 ${
-                                i === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
+                                index === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
                               }`}>
                                 <div className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3" 
                                 onClick={() => {
