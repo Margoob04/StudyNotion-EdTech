@@ -7,14 +7,13 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/free-mode"
 import "swiper/css/pagination"
-import "../../App.css"
+
 // Icons
 import { FaStar } from "react-icons/fa"
 // Import required modules
-import { Autoplay, FreeMode, Pagination } from "swiper"
-
+import { Autoplay,FreeMode, Pagination } from 'swiper/modules';
 // Get apiFunction and the endpoint
-import { apiConnector } from "../../services/apiconnector"
+import { apiconnecter } from "../../services/apiconnecter"
 import { ratingsEndpoints } from "../../services/apis"
 
 function ReviewSlider() {
@@ -23,7 +22,7 @@ function ReviewSlider() {
 
   useEffect(() => {
     ;(async () => {
-      const { data } = await apiConnector(
+      const { data } = await apiconnecter(
         "GET",
         ratingsEndpoints.REVIEWS_DETAILS_API
       )
